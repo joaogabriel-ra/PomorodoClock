@@ -1,11 +1,3 @@
-**Mobile** 
-
-![mobile](https://imgur.com/NvWwmfZ.png)
-
-**Desktop** 
-
-![desktop](https://imgur.com/lX9RVvN.png)
-
 This application is a Pomodoro Clock :alarm_clock: from the [App Ideas Collection :ledger:](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Pomodoro-Clock.md).
 
 It solves the following user stories:
@@ -23,3 +15,11 @@ If you want to run this application on your machine you'll need:
 
 * **[Install Node/NPM](https://nodejs.org/en/)**
 * **Run the application using npm install and then npm start**
+
+**Mobile** 
+
+![mobile](https://imgur.com/NvWwmfZ.png)
+
+**Desktop** 
+
+![desktop](https://imgur.com/lX9RVvN.png)
