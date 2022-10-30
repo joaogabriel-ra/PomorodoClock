@@ -8,12 +8,14 @@ type Props = {
   breakSessionInSeconds: number;
   handleIncrementBreakSessionByOneMinute: () => void;
   handleDecrementBreakSessionByOneMinute: () => void;
+  isStarted: boolean;
 };
 
 const BreakSession: React.FC<Props> = ({
   breakSessionInSeconds,
   handleIncrementBreakSessionByOneMinute,
   handleDecrementBreakSessionByOneMinute,
+  isStarted,
 }) => {
   const breakSessionInMinutes = moment
     .duration(breakSessionInSeconds, "s")
@@ -29,6 +31,7 @@ const BreakSession: React.FC<Props> = ({
         role="decrement-break"
         color="primary"
         onClick={handleDecrementBreakSessionByOneMinute}
+        disabled={isStarted}
       >
         <RemoveCircleIcon />
       </IconButton>
@@ -36,6 +39,7 @@ const BreakSession: React.FC<Props> = ({
         role="increment-break"
         color="primary"
         onClick={handleIncrementBreakSessionByOneMinute}
+        disabled={isStarted}
       >
         <AddCircleIcon />
       </IconButton>

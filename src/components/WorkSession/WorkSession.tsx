@@ -8,12 +8,14 @@ type Props = {
   workSessionInSeconds: number;
   handleIncrementWorkSessionByOneMinute: () => void;
   handleDecrementWorkSessionByOneMinute: () => void;
+  isStarted: boolean;
 };
 
 const WorkSession: React.FC<Props> = ({
   workSessionInSeconds,
   handleIncrementWorkSessionByOneMinute,
   handleDecrementWorkSessionByOneMinute,
+  isStarted,
 }) => {
   const workSessionInMinutes = moment
     .duration(workSessionInSeconds, "s")
@@ -22,13 +24,14 @@ const WorkSession: React.FC<Props> = ({
   return (
     <div>
       <p>
-        <strong>Work Session</strong>
+        <strong>Work/Study Session</strong>
       </p>
       <p>{workSessionInMinutes} minutes</p>
       <IconButton
         role="decrement-work"
         color="primary"
         onClick={handleDecrementWorkSessionByOneMinute}
+        disabled={isStarted}
       >
         <RemoveCircleIcon />
       </IconButton>
@@ -36,6 +39,7 @@ const WorkSession: React.FC<Props> = ({
         role="increment-work"
         color="primary"
         onClick={handleIncrementWorkSessionByOneMinute}
+        disabled={isStarted}
       >
         <AddCircleIcon />
       </IconButton>

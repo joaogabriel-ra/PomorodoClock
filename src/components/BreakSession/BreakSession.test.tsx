@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker';
+import { faker } from "@faker-js/faker";
 import { render, screen } from "@testing-library/react";
 import moment from "moment";
 
@@ -6,12 +6,16 @@ import BreakSession from "./BreakSession";
 
 const mock = jest.fn();
 
-const renderComponent = (breakSessionInSeconds: number = 0) => {
+const renderComponent = (
+  breakSessionInSeconds: number = 0,
+  isStarted: boolean = false
+) => {
   return render(
     <BreakSession
       breakSessionInSeconds={breakSessionInSeconds}
       handleIncrementBreakSessionByOneMinute={mock}
       handleDecrementBreakSessionByOneMinute={mock}
+      isStarted={isStarted}
     />
   );
 };

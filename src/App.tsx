@@ -14,7 +14,7 @@ import "./App.scss";
 function App() {
   const [breakSessionInSeconds, setBreakSessionInSeconds] = useState(300);
   const [workSessionInSeconds, setWorkSessionInSeconds] = useState(1500);
-  const [sessionType, setSessionType] = useState("Work");
+  const [sessionType, setSessionType] = useState("Work/Study");
   const [intervalId, setIntervalId] = useState<NodeJS.Timer | null>(null);
   const [timer, setTimer] = useState(workSessionInSeconds);
   const [color, setColor] = useState(false);
@@ -33,8 +33,8 @@ function App() {
     if (timer === 0) {
       audio.play();
 
-      if (sessionType === "Work") {
-        if (pomodoroCounter === 4 && sessionType === "Work") {
+      if (sessionType === "Work/Study") {
+        if (pomodoroCounter === 4 && sessionType === "Work/Study") {
           setSessionType("Break");
           setTimer(breakSessionInSeconds * 4);
           resetPomodoroCounter();
@@ -44,7 +44,7 @@ function App() {
           setPomodoroCounter(pomodoroCounter + 1);
         }
       } else if (sessionType === "Break") {
-        setSessionType("Work");
+        setSessionType("Work/Study");
         setTimer(workSessionInSeconds);
       }
     }
@@ -71,7 +71,7 @@ function App() {
   const handleReset = () => {
     clearInterval(intervalId as NodeJS.Timer);
     setIntervalId(null);
-    setSessionType("Work");
+    setSessionType("Work/Study");
     setWorkSessionInSeconds(1500);
     setBreakSessionInSeconds(300);
     setTimer(1500);
@@ -195,7 +195,7 @@ function App() {
               handleReset={handleReset}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item sm={6} xs={12}>
             <BreakSession
               breakSessionInSeconds={breakSessionInSeconds}
               handleIncrementBreakSessionByOneMinute={
@@ -204,9 +204,10 @@ function App() {
               handleDecrementBreakSessionByOneMinute={
                 handleDecrementBreakSessionByOneMinute
               }
+              isStarted={isStarted}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item sm={6} xs={12}>
             <WorkSession
               workSessionInSeconds={workSessionInSeconds}
               handleIncrementWorkSessionByOneMinute={
@@ -215,6 +216,7 @@ function App() {
               handleDecrementWorkSessionByOneMinute={
                 handleDecrementWorkSessionByOneMinute
               }
+              isStarted={isStarted}
             />
           </Grid>
         </Grid>
