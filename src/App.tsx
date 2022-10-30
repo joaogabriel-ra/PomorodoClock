@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
+import { styled } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
-import CssBaseline from "@mui/material/CssBaseline";
-import { styled } from "@mui/material";
+import { useEffect, useState } from "react";
 
+import BreakSession from "./components/BreakSession/BreakSession";
 import Header from "./components/Header/Header";
 import Timer from "./components/Timer/Timer";
-import BreakSession from "./components/BreakSession/BreakSession";
 import WorkSession from "./components/WorkSession/WorkSession";
-
 import "./App.scss";
 
 function App() {
@@ -148,7 +147,7 @@ function App() {
       },
     },
     "& .MuiSwitch-thumb": {
-      backgroundColor: theme.palette.mode === "dark" ? "#003892" : "#001e3c",
+      backgroundColor: theme.palette.mode === "dark" ? "#002884" : "#757ce8",
       width: 32,
       height: 32,
       "&:before": {

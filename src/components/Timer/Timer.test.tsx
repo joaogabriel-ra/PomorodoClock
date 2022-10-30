@@ -1,6 +1,7 @@
+import { faker } from '@faker-js/faker';
 import { render, screen } from "@testing-library/react";
+
 import Timer from "./Timer";
-import * as faker from "@faker-js/faker";
 
 const moment = require("moment");
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

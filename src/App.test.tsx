@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+
 import App from "./App";
 
 describe("App", () => {
@@ -15,10 +16,5 @@ describe("App", () => {
     const darkModeSwitch = screen.queryByRole("switch");
 
     expect(darkModeSwitch as HTMLElement).toBeInTheDocument();
-  });
-
-  
-  test("should have a longer break after 4 pomodoro sessions", () => {
-    //TO DO: How?
   });
 });

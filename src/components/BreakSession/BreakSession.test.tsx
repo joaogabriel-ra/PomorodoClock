@@ -1,7 +1,8 @@
+import { faker } from '@faker-js/faker';
 import { render, screen } from "@testing-library/react";
-import BreakSession from "./BreakSession";
-import * as faker from "@faker-js/faker";
 import moment from "moment";
+
+import BreakSession from "./BreakSession";
 
 const mock = jest.fn();
 
