@@ -1,10 +1,10 @@
 **Mobile** 
 
-![mobile](https://imgur.com/NvWwmfZ)
+![mobile](https://imgur.com/NvWwmfZ.png)
 
 **Desktop** 
 
-![desktop](https://imgur.com/lX9RVvN)
+![desktop](https://imgur.com/lX9RVvN.png)
 
 This application is a Pomodoro Clock :alarm_clock: from the [App Ideas Collection :ledger:](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Pomodoro-Clock.md).
 
